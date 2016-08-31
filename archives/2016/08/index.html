@@ -17,7 +17,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://makedev.org/archives/2016/08/">
+    <link rel="canonical" href="https://evheniy.github.io/archives/2016/08/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="http://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- Hux Delete, sad but pending in China
@@ -83,6 +83,16 @@
                         <a href="/">Home</a>
                     </li>
 
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
                     
                     
                 </ul>
@@ -209,7 +219,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://makedev.org/js/jquery.tagcloud.js",function(){
+        async("https://evheniy.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -221,7 +231,7 @@
 
 <!--fastClick.js -->
 <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
@@ -243,7 +253,7 @@
 
 
 <!-- Image to hack wechat -->
-<img src="https://makedev.org/img/icon_wechat.png" width="0" height="0" />
+<img src="https://evheniy.github.io/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>

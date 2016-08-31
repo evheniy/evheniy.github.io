@@ -17,7 +17,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://makedev.org/hello-world.html">
+    <link rel="canonical" href="https://evheniy.github.io/hello-world.html">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="http://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- Hux Delete, sad but pending in China
@@ -84,6 +84,16 @@
                     </li>
 
                     
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
                     
                 </ul>
             </div>
@@ -125,13 +135,13 @@
     <!-- Main Content -->
     
 <!-- Image to hack wechat -->
-<!-- <img src="https://makedev.org/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="https://evheniy.github.io/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('/undefined')
+        background-image: url('img/post-bg-2015.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -188,6 +198,12 @@
                 
 
                 
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
 
             </div>
     <!-- Side Catalog Container -->
@@ -213,6 +229,21 @@
 
 
 
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "evheniy-github-io.disqus.com";
+    var disqus_identifier = "https://evheniy.github.io/hello-world.html";
+    var disqus_url = "https://evheniy.github.io/hello-world.html";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
 
 
 
@@ -303,7 +334,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://makedev.org/js/jquery.tagcloud.js",function(){
+        async("https://evheniy.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -315,7 +346,7 @@
 
 <!--fastClick.js -->
 <script>
-    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
         var $nav = document.querySelector("nav");
         if($nav) FastClick.attach($nav);
     })
@@ -337,7 +368,7 @@
 
 
 <!-- Image to hack wechat -->
-<img src="https://makedev.org/img/icon_wechat.png" width="0" height="0" />
+<img src="https://evheniy.github.io/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
