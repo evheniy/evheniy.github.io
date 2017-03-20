@@ -6,13 +6,30 @@
     <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <title>YEPS</title>
     <style>
-        body {
-            padding: 0 30% 0 30%;
+        article {
+            margin: 0 auto;
+            width: 50%;
         }
         @media (max-width: 768px) {
-            body {
-                padding: 0 5% 0 5%;
+            article {
+                margin: 0 auto;
+                width: 90%;
             }
+        }
+        pre {
+            overflow: auto;
+            word-wrap: normal;
+            white-space: pre;
+            font-size: 90%;
+            display: block;
+            padding: 9px;
+            margin: 0 0 10px;
+            line-height: 1.42857143;
+            color: #333;
+            word-break: break-all;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -81,7 +98,7 @@
     <pre><code>const http = require('http');
 
 const server = http.createServer( (req, res) =&gt; {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
+  ctx.res.statusCode = 200;
   res.end('okay');
 });
 </code></pre>
@@ -92,7 +109,7 @@ const server = http.createServer( (req, res) =&gt; {
   Promise.resolve({ req, res })
     .then(ctx =&gt; {
 
-        ctx.res.writeHead(200, {'Content-Type': 'text/plain'});
+        ctx.res.statusCode = 200;
         ctx.res.end('okay');
 
         return ctx;
@@ -108,12 +125,12 @@ const server = http.createServer( (req, res) =&gt; {
 const app = module.exports = new App();
 
 app.then(async ctx =&gt; {
-  ctx.res.writeHead(200, {'Content-Type': 'text/plain'});
+  ctx.res.statusCode = 200;
   ctx.res.end('Ok');
 });
 
 app.catch(async (err, ctx) =&gt; {
-  ctx.res.writeHead(500);
+  ctx.res.statusCode = 500;
   ctx.res.end(err.message);
 });
 </code></pre>
@@ -136,7 +153,6 @@ http
     <p>By default all app steps will be finished. Except one of them has rejected promise:</p>
     <pre><code>app.then(async ctx =&gt; {
 
-  ctx.res.writeHead(200);
   ctx.res.end('test');
 
   return app.reject();
