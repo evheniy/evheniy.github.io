@@ -10,10 +10,17 @@
             margin: 0 auto;
             width: 50%;
         }
+        .img {
+            max-width: 30%;
+            border: none;
+        }
         @media (max-width: 768px) {
             article {
                 margin: 0 auto;
                 width: 90%;
+            }
+            .img {
+                max-width: 100%;
             }
         }
         pre {
@@ -36,6 +43,7 @@
 <body>
 <article>
     <h1>Yet Another Event Promised Server</h1>
+    <img class="img" src="logo.png" alt="YEPS" />
     <p>Simple promised node http request-response handler</p>
     <p><a href="https://npmjs.org/package/yeps"><img
             src="https://camo.githubusercontent.com/0e59734ee7183ac0285b696a2abdab53807da1e3/68747470733a2f2f6e6f6465692e636f2f6e706d2f796570732e706e67"
