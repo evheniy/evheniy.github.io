@@ -1,202 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-    <title>YEPS</title>
-    <style>
-        article {
-            margin: 0 auto;
-            width: 50%;
-        }
-        .img {
-            max-width: 30%;
-            border: none;
-        }
-        @media (max-width: 768px) {
-            article {
-                margin: 0 auto;
-                width: 90%;
-            }
-            .img {
-                max-width: 100%;
-            }
-        }
-        pre {
-            overflow: auto;
-            word-wrap: normal;
-            white-space: pre;
-            font-size: 90%;
-            display: block;
-            padding: 9px;
-            margin: 0 0 10px;
-            line-height: 1.42857143;
-            color: #333;
-            word-break: break-all;
-            background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Node.js, React.js, Redux.js ...</title>
 </head>
 <body>
-<article>
-    <h1>Yet Another Event Promised Server</h1>
-    <img class="img" src="logo.png" alt="YEPS" />
-    <p>Simple promised node http request-response handler (Express.js on steroids)</p>
-    <p><a href="https://npmjs.org/package/yeps"><img
-            src="https://camo.githubusercontent.com/0e59734ee7183ac0285b696a2abdab53807da1e3/68747470733a2f2f6e6f6465692e636f2f6e706d2f796570732e706e67"
-            alt="NPM" data-canonical-src="https://nodei.co/npm/yeps.png" style="max-width:100%;"></a></p>
-    <p><a href="https://badge.fury.io/js/yeps"><img
-            src="https://camo.githubusercontent.com/6b3c4424d29d1ccdb97258aeee60f7f22fdc8e4a/68747470733a2f2f62616467652e667572792e696f2f6a732f796570732e737667"
-            alt="npm version" data-canonical-src="https://badge.fury.io/js/yeps.svg" style="max-width:100%;"></a>
-        <a href="https://travis-ci.org/evheniy/yeps"><img
-                src="https://camo.githubusercontent.com/21f1b14e67854fe2e000b912a04c434c776a6c03/68747470733a2f2f7472617669732d63692e6f72672f657668656e69792f796570732e7376673f6272616e63683d6d6173746572"
-                alt="Build Status" data-canonical-src="https://travis-ci.org/evheniy/yeps.svg?branch=master"
-                style="max-width:100%;"></a>
-        <a href="https://coveralls.io/github/evheniy/yeps?branch=master"><img
-                src="https://camo.githubusercontent.com/87cd4a41c73da9f25e2fb5213e2c07085db8d35e/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f657668656e69792f796570732f62616467652e7376673f6272616e63683d6d6173746572"
-                alt="Coverage Status"
-                data-canonical-src="https://coveralls.io/repos/github/evheniy/yeps/badge.svg?branch=master"
-                style="max-width:100%;"></a>
-        <a href="https://travis-ci.org/evheniy/"><img
-                src="https://camo.githubusercontent.com/e571193360eaa41aa46ae4c1c10939edcd85f48e/68747470733a2f2f696d672e736869656c64732e696f2f7472617669732f657668656e69792f796570732f6d61737465722e7376673f6c6162656c3d6c696e7578"
-                alt="Linux Build" data-canonical-src="https://img.shields.io/travis/evheniy/yeps/master.svg?label=linux"
-                style="max-width:100%;"></a>
-        <a href="https://ci.appveyor.com/project/evheniy/yeps"><img
-                src="https://camo.githubusercontent.com/1eb43d3ba21cc2247e7c658c741e00a395f30194/68747470733a2f2f696d672e736869656c64732e696f2f6170707665796f722f63692f657668656e69792f796570732f6d61737465722e7376673f6c6162656c3d77696e646f7773"
-                alt="Windows Build"
-                data-canonical-src="https://img.shields.io/appveyor/ci/evheniy/yeps/master.svg?label=windows"
-                style="max-width:100%;"></a></p>
-    <p><a href="https://david-dm.org/evheniy/yeps"><img
-            src="https://camo.githubusercontent.com/8060e2132399dac6c5d8a460d5c2bc8d59b1f836/68747470733a2f2f64617669642d646d2e6f72672f657668656e69792f796570732e737667"
-            alt="Dependency Status" data-canonical-src="https://david-dm.org/evheniy/yeps.svg" style="max-width:100%;"></a>
-        <a href="https://david-dm.org/evheniy/yeps#info=devDependencies"><img
-                src="https://camo.githubusercontent.com/5b2d6085bf1bc83115a51fd8e0a64c2325d3c322/68747470733a2f2f64617669642d646d2e6f72672f657668656e69792f796570732f6465762d7374617475732e737667"
-                alt="devDependency Status" data-canonical-src="https://david-dm.org/evheniy/yeps/dev-status.svg"
-                style="max-width:100%;"></a>
-        <a href="https://travis-ci.org/evheniy/yeps"><img
-                src="https://camo.githubusercontent.com/effd89be5a7aa3316d3316bab25eea00fd53a59d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e53502532307374617475732d6e6f25323076756c6e65726162696c69746965732d677265656e2e737667"
-                alt="NSP Status"
-                data-canonical-src="https://img.shields.io/badge/NSP%20status-no%20vulnerabilities-green.svg"
-                style="max-width:100%;"></a></p>
-    <p><a href="https://raw.githubusercontent.com/evheniy/yeps/master/LICENSE"><img
-            src="https://camo.githubusercontent.com/890acbdcb87868b382af9a4b1fac507b9659d9bf/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e737667"
-            alt="License" data-canonical-src="https://img.shields.io/badge/license-MIT-blue.svg"
-            style="max-width:100%;"></a>
-        <a href="https://github.com/evheniy/yeps/stargazers"><img
-                src="https://camo.githubusercontent.com/168219a30bca8c1dfcdb9ad5c80bd816473a5de6/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f73746172732f657668656e69792f796570732e737667"
-                alt="GitHub stars" data-canonical-src="https://img.shields.io/github/stars/evheniy/yeps.svg"
-                style="max-width:100%;"></a>
-        <a href="https://github.com/evheniy/yeps/network"><img
-                src="https://camo.githubusercontent.com/9f73127a432f35db04fba8ac8a93d54fdd770ba8/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f666f726b732f657668656e69792f796570732e737667"
-                alt="GitHub forks" data-canonical-src="https://img.shields.io/github/forks/evheniy/yeps.svg"
-                style="max-width:100%;"></a>
-        <a href="https://github.com/evheniy/yeps/issues"><img
-                src="https://camo.githubusercontent.com/796178a339fd045ad2ef2050d02f7b1d24883ed4/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f657668656e69792f796570732e737667"
-                alt="GitHub issues" data-canonical-src="https://img.shields.io/github/issues/evheniy/yeps.svg"
-                style="max-width:100%;"></a>
-        <a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=%5Bobject%20Object%5D"><img
-                src="https://camo.githubusercontent.com/e6bdb4b78bbc6ed9646d2098fed93beb7965c949/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f75726c2f68747470732f6769746875622e636f6d2f657668656e69792f796570732e7376673f7374796c653d736f6369616c"
-                alt="Twitter"
-                data-canonical-src="https://img.shields.io/twitter/url/https/github.com/evheniy/yeps.svg?style=social"
-                style="max-width:100%;"></a></p>
-    <p>Node http server is simple and fast. But it works with callbacks:</p>
-    <pre><code>const http = require('http');
+<h1>Node.js, React.js, Redux.js ...</h1>
+<p>Здесь я оставлю некоторые ссылки для начинающих JS разработчиков</p>
+<ul>
+    <li>
+        <h2>JS</h2>
+        <ul>
+            <li><strong><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q">Основы ES6</a></strong></li>
+            <li><a href="https://leanpub.com/understandinges6/read">Understanding ECMAScript 6</a></li>
+            <li><a href="http://es6-features.org/">ECMAScript 6</a></li>
+            <li><a href="https://medium.com/devschacht/glossary-of-modern-javascript-concepts-1198b24e8f56">Справочник современных концепций JavaScript: часть 1</a></li>
+            <li><strong><a href="https://learn.javascript.ru/promise">Promise</a></strong></li>
+            <li><a href="https://www.typescriptlang.org/docs/tutorial.html">TypeScript</a></li>
+        </ul>
+    </li>
 
-const server = http.createServer( (req, res) =&gt; {
-  ctx.res.statusCode = 200;
-  res.end('okay');
-});
-</code></pre>
-    <p>If we want to use promise (and async await):</p>
-    <pre><code>const http = require('http');
-
-const server = http.createServer( (req, res) =&gt; {
-  Promise.resolve({ req, res })
-    .then(ctx =&gt; {
-
-        ctx.res.statusCode = 200;
-        ctx.res.end('okay');
-
-        return ctx;
-    });
-});
-</code></pre>
-    <h2>And the same with yeps:</h2>
-    <pre><code>npm i -S yeps
-</code></pre>
-    <p>app.js</p>
-    <pre><code>const App = require('yeps');
-
-const app = module.exports = new App();
-
-app.then(async ctx =&gt; {
-  ctx.res.statusCode = 200;
-  ctx.res.end('Ok');
-});
-
-app.catch(async (err, ctx) =&gt; {
-  ctx.res.statusCode = 500;
-  ctx.res.end(err.message);
-});
-</code></pre>
-    <p>bin/www</p>
-    <pre><code>#!/usr/bin/env node
-
-const http = require('http');
-const app = require('../app');
-
-http
-    .createServer(app.resolve())
-    .listen(parseInt(process.env.PORT || '3000', 10));
-</code></pre>
-    <p>package.json</p>
-    <pre><code>"scripts": {
-  "start": "node bin/www"
-}
-</code></pre>
-    <h2>Promise like middleware</h2>
-    <p>By default all app steps will be finished. Except one of them has rejected promise:</p>
-    <pre><code>app.then(async ctx =&gt; {
-
-  ctx.res.end('test');
-
-  return app.reject();
-
-}).then(async () =&gt; {
-
-  // it wont work
-
-}).catch(async () =&gt; {
-
-  // it wont work
-
-});
-</code></pre>
-    <h2>Packages</h2>
-    <ul>
-        <li><a href="https://github.com/evheniy/yeps">Anatomy of an HTTP Transaction</a>YEPS</li>
-        <li><a href="https://github.com/evheniy/yeps-promisify">yeps-promisify</a> - YEPS kernel</li>
-        <li><a href="https://github.com/evheniy/yeps-benchmark">yeps-benchmark</a> - performance comparison koa2, express and node http</li>
-        <li><a href="https://github.com/evheniy/yeps-router">yeps-router</a> - YEPS promise based router</li>
-        <li><a href="https://github.com/evheniy/yeps-virtual-host">yeps-virtual-host</a> - It helps to work with different domains splitting http / https protocols</li>
-        <li><a href="https://github.com/evheniy/yeps-error">yeps-error</a> - YEPS 404/500 error handler</li>
-        <li><a href="https://github.com/evheniy/yeps-redis">yeps-redis</a> - YEPS promise based redis client - ioredis</li>
-        <li><a href="https://github.com/evheniy/yeps-logger">yeps-logger</a> - YEPS Async logger - winston</li>
-        <li><a href="https://github.com/evheniy/yeps-bodyparser">yeps-bodyparser</a> - YEPS body parser</li>
-        <li><a href="https://github.com/evheniy/yeps-cors">yeps-cors</a> - YEPS Cross-Origin Resource Sharing (CORS)</li>
-        <li><a href="https://github.com/evheniy/yeps-helmet">yeps-helmet</a> - It helps you secure your YEPS apps by setting various HTTP headers</li>
-        <li><a href="https://github.com/evheniy/yeps-cookie-parser">yeps-cookie-parser</a> - YEPS Cookie Parser</li>
-        <li><a href="https://github.com/evheniy/yeps-mysql">yeps-mysql</a> - YEPS Promise based mysql client</li>
-        <li><a href="https://github.com/evheniy/yeps-static">yeps-static</a> - YEPS Static file serving</li>
-        <li><a href="https://github.com/evheniy/yeps-method-override">yeps-method-override</a> - YEPS Method Override</li>
-        <li><a href="https://github.com/evheniy/yeps-boilerplate">yeps-boilerplate</a> - YEPS app boilerplate</li>
-        <li><a href="https://github.com/evheniy/yeps-express-wrapper">yeps-express-wrapper</a> - YEPS express wrapper</li>
-        <li><a href="https://github.com/evheniy/node-vagrant">node-vagrant</a> - Node.js Vagrant config</li>
-    </ul>
-    <a href="https://habrahabr.ru/post/322526/">Очередная node.js-библиотека…</a>
-</article>
+    <li>
+        <h2>Node.js</h2>
+        <ul>
+            <li><a href="https://nodejs.org/dist/latest-v8.x/docs/api/">Node.js v8.4.0 Documentation</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLpY_9m7gHQDhYedcBEohwnh5yfXTfhMAG">Основы</a></li>
+            <li><a href="https://www.youtube.com/watch?v=F50MJXa5Y9k">Создание сервера</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLDyvV36pndZFWfEQpNixIHVvp191Hb3Gg">Скринкаст по Node.JS</a></li>
+            <li><a href="https://github.com/RisingStack/node-style-guide">Node.js Style Guide</a></li>
+            <li><a href="https://gist.github.com/LeCoupa/985b82968d8285987dc3">Node.js CheatSheet</a></li>
+            <li><a href="http://expressjs.com/ru/">Express - фреймворк веб-приложений Node.js</a></li>
+            <li><a href="http://koajs.com/">Koa - next generation web framework for node.js</a></li>
+            <li><a href="http://yeps.info/">YEPS framework</a></li>
+            <li><a href="https://habrahabr.ru/post/308352/">Тестирование RESTful API на NodeJS с Mocha и Chai</a></li>
+            <li><a href="https://habrahabr.ru/post/322526/">Очередная node.js-библиотека…</a></li>
+            <li><a href="https://medium.com/@evheniybystrov/yet-another-event-promised-server-ee1b06506add">Yet Another Event Promised Server</a></li>
+        </ul>
+    </li>
+    <li>
+        <h2>React.js, Redux.js</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxAOZCOfiukwZe4zJZIiVynvh">Знакомство с Babel</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLDyvV36pndZHfBThhg4Z0822EEG9VGenn">Скринкаст по Webpack</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLDyvV36pndZFLTE13V4qNWTZbeipNhCgQ">Скринкаст по Gulp</a></li>
+            <li><strong><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxAONt5CnjMMeKdYGv1CDRUOl">Знакомство с React</a></strong></li>
+            <li><strong><a href="https://www.gitbook.com/book/maxfarseer/react-course-ru/details">React.js курс для начинающих</a></strong></li>
+            <li><strong><a href="https://habrahabr.ru/company/netologyru/blog/324788/">Эврика! Моменты озарения при изучении React</a></strong></li>
+            <li><strong><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxANFIgAf7BO8hNYdvipLERxQ">Знакомство с Redux</a></strong></li>
+            <li><strong><a href="https://www.gitbook.com/book/maxfarseer/redux-course-ru/details">React Redux</a></strong></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxANc2mFeSIRLdglGf2ZNzNBr">Уроки по React и Redux</a></li>
+            <li><a href="https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel">Setup a React Environment Using webpack and Babel</a></li>
+            <li><a href="http://codepen.io/eduardoboucas/full/jqWbdb/">React components lifecycle diagram</a></li>
+            <li><a href="https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1">React Lifecycle Methods- how and when to use them</a></li>
+            <li><a href="http://roman01la.github.io/html-to-react-components/">Converts HTML pages into React components</a></li>
+            <li><a href="https://github.com/vasanthk/react-bits">React patterns, techniques, tips and tricks</a></li>
+            <li><a href="http://maximdenisov.ru/articles/25">Тестирование React компонентов с Enzyme и Mocha</a></li>
+            <li><a href="https://habrahabr.ru/company/infowatch/blog/315760/">Тестирование в React</a></li>
+            <li><a href="http://redux.js.org/docs/introduction/">Redux</a></li>
+            <li><a href="https://egghead.io/courses/getting-started-with-redux">Getting Started with Redux</a></li>
+            <li><a href="https://blog.andrewray.me/youre-missing-the-point-of-jsx/">You're Missing The Point Of JSX</a></li>
+            <li><a href="https://blog.andrewray.me/flux-for-stupid-people/">Flux For Stupid People</a></li>
+            <li><a href="https://blog.andrewray.me/reactjs-for-stupid-people/">ReactJS For Stupid People</a></li>
+        </ul>
+    </li>
+    <li>
+        <h2>Reactive JS</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=AslncyG8whg">Netflix JavaScript Talks - RxJS + Redux + React = Amazing!</a></li>
+            <li><a href="https://www.youtube.com/watch?v=NK-WzH3RBds">Что такое Observables и RxJS?</a></li>
+            <li><a href="https://dzone.com/refcardz/rxjs-streams">Reactive Programming in JavaScript With RxJS</a></li>
+            <li><a href="http://reactivex.io/learnrx/">Functional Programming in Javascript</a></li>
+            <li><a href="http://reactivex.io/rxjs/">RxJS</a></li>
+        </ul>
+    </li>
+    <li>
+        <h2>RESTful API</h2>
+        <ul>
+            <li><a href="http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api">Best Practices for Designing a Pragmatic RESTful API</a></li>
+            <li><a href="https://www.sitepoint.com/creating-restful-apis-express-4/">Want to keep up to date with web development and design?</a></li>
+            <li><a href="https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md">Microsoft REST API Guidelines</a></li>
+        </ul>
+    </li>
+    <li><a href="https://www.youtube.com/playlist?list=PLqHlAwsJRxAPs942EdJ1akeWpOg2yatiM">CSS: Flexbox</a></li>
+</ul>
 </body>
 </html>
